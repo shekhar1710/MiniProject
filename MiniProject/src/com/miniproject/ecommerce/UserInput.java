@@ -2,11 +2,14 @@ package com.miniproject.ecommerce;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UserInput {
 
 	PreparedStatement ps = null;
 	Connection con = null ;
+		
+
 	
 	public void insertCustomerDetails(String Name, String Username, String Password, long MobileNumber, String Address) {
 	
@@ -25,7 +28,7 @@ public class UserInput {
 		int i = ps.executeUpdate();	
 		
 		
-		System.out.println("Success "+ i );
+		System.out.println("Registration Successful");
 		
 		con.close();
 		ps.close();
