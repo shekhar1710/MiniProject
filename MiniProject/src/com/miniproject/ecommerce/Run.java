@@ -1,12 +1,6 @@
 package com.miniproject.ecommerce;
-import java.awt.Container;
-import java.awt.Font;
 import java.sql.SQLException;
 import java.util.Scanner;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.WindowConstants;
 
 public class Run {
 	 Scanner scanner = new Scanner(System.in);
