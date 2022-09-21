@@ -1,39 +1,43 @@
 package com.miniproject.ecommerce;
-
+import java.awt.Container;
+import java.awt.Font;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.WindowConstants;
+
 public class Run {
-	static Scanner scanner = new Scanner(System.in);
+	 Scanner scanner = new Scanner(System.in);
+	
+	
 	
 	public void first() throws SQLException {
 		Run run = new Run();
-		
-		System.out.println(" Welcome to Navneet stationary store ");
-		System.out.println("For login : Press 1\nFor new user : Press 2\nAdmin login : Press 3");
-		char u = scanner.next().charAt(0);
+		System.out.println("=======================================================================================================================================================================================\n");
+		System.out.println("                                    ✏️📕---Welcome to Navneet stationary store---📕✏️ ");
+		System.out.println("\n=====================================================================================================================================================================================\n");
+		System.out.println("\n      Main menu");
+		System.out.println("     -----------");
+		System.out.println("For login :    Press 1️\nFor new user : Press 2\nAdmin login :  Press 3");
+		String u = scanner.next();
 		Register re = new Register();
 		Admin ad = new Admin();
 		try {
-		if(u=='1') {
+		if(u.equals("1")) {
 			re.userLogin();
-		}else if (u=='2') {
+		}else if (u.equals("2")) {
 			re.enterUser();
-		}else if (u=='3'){
+		}else if (u.equals("3")){
 			ad.loginAdmin();
 		}else {
-			
 			throw new InvalidInputException("Please enter a valid number.");
-			
-		}
-			
+		}	
 		}catch(InvalidInputException e) {
-			System.out.println(e);
-			run.call();
-			
-		}
-		
-		
+			System.err.println(e);
+				run.first();
+		}	
 	}
 	
 	public void call() throws SQLException {
@@ -53,34 +57,8 @@ public class Run {
 	}
 	
 	public static void main(String[] args) throws InvalidInputException, SQLException {
-		BuyProduct buy = new BuyProduct();
 		Run run = new Run();
-		run.call();
-		
-	int a =	buy.longBook;
-		System.out.println(a);
-//		Run run = new Run();
-		
-		
-		
-		
-		
-//		String a = "asa";
-//		String b = "hjhjgh";
-//		String c = "uuussss";
-//		long d = 545446;
-//		String e = "asa";
-//		UserInput us = new UserInput();
-//		run.start();
-		//reg.enterUser();
-		//reg.insertCustomerDetails(getfirstName,b,c,d,e);
-		
-		
-		//ad.productQuantity();
-		//ad.fetchCustomerDetails();
-		
-		BuyProduct by = new BuyProduct();
-		//by.buyNow();
+		run.call();	
 	}
 
 }

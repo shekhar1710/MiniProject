@@ -2,7 +2,7 @@ package com.miniproject.ecommerce;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.Iterator;
 
 public class UserInput {
 
@@ -28,7 +28,7 @@ public class UserInput {
 		int i = ps.executeUpdate();	
 		
 		
-		System.out.println("Registration Successful");
+		System.out.println("\n\nRegistration Successful");
 		
 		con.close();
 		ps.close();
@@ -38,5 +38,29 @@ public class UserInput {
 		
 	}
 	
+	
+	public void insertBuyHistory() {
+		try {
+		ConnectionTest test = new ConnectionTest();
+		con=test.getConnection();
+		ps = con.prepareStatement("INSERT into buyhistory (username,productId,quantity)values(?,?,?) ");
+		
+		Iterator<Integer> itr = BuyProduct.list4.iterator();
+		 Iterator<Integer> itr2 = BuyProduct.list3.iterator();
+		
+		while(itr.hasNext()) {
+			
+			
+			ps.setString(1 , Register.user);
+			ps.setInt(2, itr.next());
+			ps.setInt(3, itr2.next());
+			ps.executeUpdate();
+		}
+		
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		}
 	
 }

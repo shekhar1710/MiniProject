@@ -12,8 +12,7 @@ public class ConnectionTest {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","Shekhar@17");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-    	   
+		}  
     	   return con;
        }
 }

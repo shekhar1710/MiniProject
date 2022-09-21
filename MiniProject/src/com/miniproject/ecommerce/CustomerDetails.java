@@ -1,9 +1,7 @@
 package com.miniproject.ecommerce;
-
 public class CustomerDetails {
 
 	private String firstName;
-	private String lastName;
 	private String userName;
 	private String password;
 	private String address;
@@ -18,9 +16,7 @@ public class CustomerDetails {
 	{
 		this.firstName = firstName;
 	}
-	
-	
-	   
+	  
 	public String getUserName()
 	{
 		return userName;
@@ -61,7 +57,5 @@ public class CustomerDetails {
 	public String toString() {
 		return "Register [firstName=" + firstName + ", userName=" + userName + ", password="
 				+ password + ", address=" + address + ", phoneNo=" + phoneNo + "]";
-	}
-	
-	
+	}	
 }
